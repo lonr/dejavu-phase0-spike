@@ -1,0 +1,79 @@
+name: Phase 0 Vertical Spike
+
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Log configure-pages outputs
+        run: |
+          echo "origin=${{ steps.pages.outputs.origin }}"
+          echo "base_path=${{ steps.pages.outputs.base_path }}"
+          echo "base_url=${{ steps.pages.outputs.base_url }}"
+
+      - name: Run contract conformance tests
+        run: pnpm test
+
+      - name: Probe default GITHUB_TOKEN GraphQL pinnedItems
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        run: node apps/blog/scripts/probe-pinned.mjs
+
+      - name: Build Vinext static export and assemble Pages artifact
+        env:
+          DEJAVU_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          DEJAVU_BASE_URL: ${{ steps.pages.outputs.base_url }}
+          DEJAVU_REPO_ID: ${{ github.repository_id }}
+        run: |
+          pnpm --filter blog build:pages
+          find apps/blog/dist/pages -maxdepth 4 | sort
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/blog/dist/pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

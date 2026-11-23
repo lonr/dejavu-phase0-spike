@@ -1,0 +1,346 @@
+{
+  "version": 1,
+  "articleIdentityVectors": [
+    {
+      "name": "personal site uppercase .MD extension",
+      "baseUrl": "https://octo.github.io",
+      "filename": "First.MD",
+      "expected": {
+        "stem": "First",
+        "encodedStem": "First",
+        "encodedPath": "/posts/First",
+        "decodedPath": "/posts/First",
+        "canonicalUrl": "https://octo.github.io/posts/First",
+        "discussionTitle": "/posts/First",
+        "optInHash": "5b87d519f5ca474fc266eb328cd541974d5e57072d73310913e74a3954aa8ec2",
+        "optInRelativePath": "assets/_dejavu/comments/5b87d519f5ca474fc266eb328cd541974d5e57072d73310913e74a3954aa8ec2.json",
+        "optInUrl": "https://octo.github.io/assets/_dejavu/comments/5b87d519f5ca474fc266eb328cd541974d5e57072d73310913e74a3954aa8ec2.json"
+      }
+    },
+    {
+      "name": "project site Unicode + space + literal percent",
+      "baseUrl": "https://octo.github.io/journal/",
+      "filename": "猫 100%.md",
+      "expected": {
+        "stem": "猫 100%",
+        "encodedStem": "%E7%8C%AB%20100%25",
+        "encodedPath": "/journal/posts/%E7%8C%AB%20100%25",
+        "decodedPath": "/journal/posts/猫 100%",
+        "canonicalUrl": "https://octo.github.io/journal/posts/%E7%8C%AB%20100%25",
+        "discussionTitle": "/journal/posts/猫 100%",
+        "optInHash": "c832669357b5c7604c9b02f69c1325d6cec85499a26b7759d547bbaf3afd2d8b",
+        "optInRelativePath": "assets/_dejavu/comments/c832669357b5c7604c9b02f69c1325d6cec85499a26b7759d547bbaf3afd2d8b.json",
+        "optInUrl": "https://octo.github.io/journal/assets/_dejavu/comments/c832669357b5c7604c9b02f69c1325d6cec85499a26b7759d547bbaf3afd2d8b.json"
+      }
+    },
+    {
+      "name": "verified custom domain at root",
+      "baseUrl": "https://blog.example.com",
+      "filename": "A.md",
+      "expected": {
+        "stem": "A",
+        "encodedStem": "A",
+        "encodedPath": "/posts/A",
+        "decodedPath": "/posts/A",
+        "canonicalUrl": "https://blog.example.com/posts/A",
+        "discussionTitle": "/posts/A",
+        "optInHash": "583a9b1b96f4c8f79cf0e8a7a0c53b9e028954beb254ba0ace28d541ccde971a",
+        "optInRelativePath": "assets/_dejavu/comments/583a9b1b96f4c8f79cf0e8a7a0c53b9e028954beb254ba0ace28d541ccde971a.json",
+        "optInUrl": "https://blog.example.com/assets/_dejavu/comments/583a9b1b96f4c8f79cf0e8a7a0c53b9e028954beb254ba0ace28d541ccde971a.json"
+      }
+    },
+    {
+      "name": "literal %2F filename",
+      "baseUrl": "https://octo.github.io",
+      "filename": "%2F.md",
+      "expected": {
+        "stem": "%2F",
+        "encodedStem": "%252F",
+        "encodedPath": "/posts/%252F",
+        "decodedPath": "/posts/%2F",
+        "canonicalUrl": "https://octo.github.io/posts/%252F",
+        "discussionTitle": "/posts/%2F",
+        "optInHash": "3bbd654a5d7ab7dcc52e8f940f973c146ea038af8925372f5630afac00c50e69",
+        "optInRelativePath": "assets/_dejavu/comments/3bbd654a5d7ab7dcc52e8f940f973c146ea038af8925372f5630afac00c50e69.json",
+        "optInUrl": "https://octo.github.io/assets/_dejavu/comments/3bbd654a5d7ab7dcc52e8f940f973c146ea038af8925372f5630afac00c50e69.json"
+      }
+    },
+    {
+      "name": "literal %41 filename distinct from A",
+      "baseUrl": "https://octo.github.io",
+      "filename": "%41.md",
+      "expected": {
+        "stem": "%41",
+        "encodedStem": "%2541",
+        "encodedPath": "/posts/%2541",
+        "decodedPath": "/posts/%41",
+        "canonicalUrl": "https://octo.github.io/posts/%2541",
+        "discussionTitle": "/posts/%41",
+        "optInHash": "70b723d22abe1ec73de772b8f6a9f0b272f94f79f7a9826e32ed49b7e7eed6f3",
+        "optInRelativePath": "assets/_dejavu/comments/70b723d22abe1ec73de772b8f6a9f0b272f94f79f7a9826e32ed49b7e7eed6f3.json",
+        "optInUrl": "https://octo.github.io/assets/_dejavu/comments/70b723d22abe1ec73de772b8f6a9f0b272f94f79f7a9826e32ed49b7e7eed6f3.json"
+      }
+    },
+    {
+      "name": "NFD Unicode normalized to NFC",
+      "baseUrl": "https://octo.github.io",
+      "filename": "cafe\u0301.md",
+      "expected": {
+        "stem": "café",
+        "encodedStem": "caf%C3%A9",
+        "encodedPath": "/posts/caf%C3%A9",
+        "decodedPath": "/posts/café",
+        "canonicalUrl": "https://octo.github.io/posts/caf%C3%A9",
+        "discussionTitle": "/posts/café",
+        "optInHash": "20f1217adfb754d813c6868e68f1abb57a864943b602503337b4e3684680748c",
+        "optInRelativePath": "assets/_dejavu/comments/20f1217adfb754d813c6868e68f1abb57a864943b602503337b4e3684680748c.json",
+        "optInUrl": "https://octo.github.io/assets/_dejavu/comments/20f1217adfb754d813c6868e68f1abb57a864943b602503337b4e3684680748c.json"
+      }
+    },
+    {
+      "name": "RFC 3986 reserved punctuation encoded strictly",
+      "baseUrl": "https://octo.github.io",
+      "filename": "what? #1! (test)*'.md",
+      "expected": {
+        "stem": "what? #1! (test)*'",
+        "encodedStem": "what%3F%20%231%21%20%28test%29%2A%27",
+        "encodedPath": "/posts/what%3F%20%231%21%20%28test%29%2A%27",
+        "decodedPath": "/posts/what? #1! (test)*'",
+        "canonicalUrl": "https://octo.github.io/posts/what%3F%20%231%21%20%28test%29%2A%27",
+        "discussionTitle": "/posts/what? #1! (test)*'",
+        "optInHash": "65ee992e3028c216ce190ea3631b59073c00bf067fb1e173e40105a2c278b661",
+        "optInRelativePath": "assets/_dejavu/comments/65ee992e3028c216ce190ea3631b59073c00bf067fb1e173e40105a2c278b661.json",
+        "optInUrl": "https://octo.github.io/assets/_dejavu/comments/65ee992e3028c216ce190ea3631b59073c00bf067fb1e173e40105a2c278b661.json"
+      }
+    }
+  ],
+  "incomingValidVectors": [
+    {
+      "name": "project Unicode with trailing slash, query, and fragment",
+      "pagesBaseUrl": "https://octo.github.io/journal",
+      "incomingUrl": "https://octo.github.io/journal/posts/%E7%8C%AB%20100%25/?ref=x#comments",
+      "expectedCanonicalUrl": "https://octo.github.io/journal/posts/%E7%8C%AB%20100%25",
+      "expectedDecodedPath": "/journal/posts/猫 100%"
+    },
+    {
+      "name": "lowercase hex percent encoding canonicalizes to uppercase",
+      "pagesBaseUrl": "https://octo.github.io/journal",
+      "incomingUrl": "https://octo.github.io/journal/posts/%e7%8c%ab%20100%25",
+      "expectedCanonicalUrl": "https://octo.github.io/journal/posts/%E7%8C%AB%20100%25",
+      "expectedDecodedPath": "/journal/posts/猫 100%"
+    },
+    {
+      "name": "encoded %252F decodes once to literal %2F stem",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%252F",
+      "expectedCanonicalUrl": "https://octo.github.io/posts/%252F",
+      "expectedDecodedPath": "/posts/%2F"
+    },
+    {
+      "name": "encoded %2541 decodes once to literal %41 stem",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%2541",
+      "expectedCanonicalUrl": "https://octo.github.io/posts/%2541",
+      "expectedDecodedPath": "/posts/%41"
+    },
+    {
+      "name": "encoded %41 decodes once to A (not %41)",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%41",
+      "expectedCanonicalUrl": "https://octo.github.io/posts/A",
+      "expectedDecodedPath": "/posts/A"
+    },
+    {
+      "name": "decoded ? and # inside encoded segment stay literal title text",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/what%3F%20%231%21%20%28test%29%2A%27?utm=1#top",
+      "expectedCanonicalUrl": "https://octo.github.io/posts/what%3F%20%231%21%20%28test%29%2A%27",
+      "expectedDecodedPath": "/posts/what? #1! (test)*'"
+    },
+    {
+      "name": "uppercase hostname normalizes to lowercase origin",
+      "pagesBaseUrl": "https://blog.example.com",
+      "incomingUrl": "https://BLOG.EXAMPLE.COM/posts/A/",
+      "expectedCanonicalUrl": "https://blog.example.com/posts/A",
+      "expectedDecodedPath": "/posts/A"
+    }
+  ],
+  "incomingRejectedVectors": [
+    {
+      "name": "incoming /posts/%2F decodes to separator",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%2F",
+      "expectedErrorCode": "DECODED_SEPARATOR"
+    },
+    {
+      "name": "incoming lowercase %2f decodes to separator",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/a%2fb",
+      "expectedErrorCode": "DECODED_SEPARATOR"
+    },
+    {
+      "name": "incoming %5C decodes to backslash",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/a%5Cb",
+      "expectedErrorCode": "DECODED_SEPARATOR"
+    },
+    {
+      "name": "raw backslash rejected before URL normalization",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts\\A",
+      "expectedErrorCode": "DECODED_SEPARATOR"
+    },
+    {
+      "name": "raw dot-dot segment rejected before URL collapsing",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/other/../posts/A",
+      "expectedErrorCode": "DOT_SEGMENT"
+    },
+    {
+      "name": "raw single dot segment rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/./posts/A",
+      "expectedErrorCode": "DOT_SEGMENT"
+    },
+    {
+      "name": "percent-encoded dot-dot segment rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%2e%2e",
+      "expectedErrorCode": "DOT_SEGMENT"
+    },
+    {
+      "name": "malformed percent escape rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/100%ZZ",
+      "expectedErrorCode": "MALFORMED_PERCENT_ENCODING"
+    },
+    {
+      "name": "truncated percent escape rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/100%",
+      "expectedErrorCode": "MALFORMED_PERCENT_ENCODING"
+    },
+    {
+      "name": "invalid UTF-8 byte sequence rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/%FF",
+      "expectedErrorCode": "INVALID_UTF8"
+    },
+    {
+      "name": "control character NUL rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/a%00b",
+      "expectedErrorCode": "CONTROL_CHARACTER"
+    },
+    {
+      "name": "control character DEL rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/a%7Fb",
+      "expectedErrorCode": "CONTROL_CHARACTER"
+    },
+    {
+      "name": "internal empty segment rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts//A",
+      "expectedErrorCode": "EMPTY_SEGMENT"
+    },
+    {
+      "name": "double trailing slash rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/A//",
+      "expectedErrorCode": "EMPTY_SEGMENT"
+    },
+    {
+      "name": "credentials in URL rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://user:pass@octo.github.io/posts/A",
+      "expectedErrorCode": "CREDENTIALS_NOT_ALLOWED"
+    },
+    {
+      "name": "unexpected port rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io:8443/posts/A",
+      "expectedErrorCode": "UNEXPECTED_PORT"
+    },
+    {
+      "name": "HTTP rejected by default",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "http://octo.github.io/posts/A",
+      "expectedErrorCode": "INVALID_SCHEME"
+    },
+    {
+      "name": "wrong project prefix rejected",
+      "pagesBaseUrl": "https://octo.github.io/journal",
+      "incomingUrl": "https://octo.github.io/other/posts/A",
+      "expectedErrorCode": "PREFIX_MISMATCH"
+    },
+    {
+      "name": "nested article route rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/dir/A",
+      "expectedErrorCode": "INVALID_ARTICLE_ROUTE"
+    },
+    {
+      "name": "posts index route is not an article",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://octo.github.io/posts/",
+      "expectedErrorCode": "INVALID_ARTICLE_ROUTE"
+    },
+    {
+      "name": "origin mismatch rejected",
+      "pagesBaseUrl": "https://octo.github.io",
+      "incomingUrl": "https://evil.github.io/posts/A",
+      "expectedErrorCode": "ORIGIN_MISMATCH"
+    }
+  ],
+  "discussionTitleMatchVectors": [
+    {
+      "name": "exact decoded title matches",
+      "discussionTitle": "/journal/posts/猫 100%",
+      "decodedPath": "/journal/posts/猫 100%",
+      "matches": true
+    },
+    {
+      "name": "legacy single trailing slash matches",
+      "discussionTitle": "/journal/posts/猫 100%/",
+      "decodedPath": "/journal/posts/猫 100%",
+      "matches": true
+    },
+    {
+      "name": "double trailing slash does NOT match",
+      "discussionTitle": "/journal/posts/猫 100%//",
+      "decodedPath": "/journal/posts/猫 100%",
+      "matches": false
+    },
+    {
+      "name": "literal %41 title matches literal %41 post",
+      "discussionTitle": "/posts/%41",
+      "decodedPath": "/posts/%41",
+      "matches": true
+    },
+    {
+      "name": "literal %41 title does NOT match A post (never URL-decode titles)",
+      "discussionTitle": "/posts/%41",
+      "decodedPath": "/posts/A",
+      "matches": false
+    },
+    {
+      "name": "A title does NOT match literal %41 post",
+      "discussionTitle": "/posts/A",
+      "decodedPath": "/posts/%41",
+      "matches": false
+    },
+    {
+      "name": "encoded URL path in title does NOT match decoded Unicode post",
+      "discussionTitle": "/journal/posts/%E7%8C%AB%20100%25",
+      "decodedPath": "/journal/posts/猫 100%",
+      "matches": false
+    },
+    {
+      "name": "NFD stored title matches NFC canonical path",
+      "discussionTitle": "/posts/cafe\u0301",
+      "decodedPath": "/posts/café",
+      "matches": true
+    }
+  ]
+}

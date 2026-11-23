@@ -1,0 +1,56 @@
+@import '@primer/primitives/dist/css/primitives.css';
+@import '@primer/primitives/dist/css/functional/themes/light.css';
+@import '@primer/primitives/dist/css/functional/themes/dark.css';
+
+.spike-body {
+  margin: 0;
+  background-color: var(--bgColor-default);
+  color: var(--fgColor-default);
+}
+
+.spike-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--base-size-24) var(--base-size-16);
+}
+
+.spike-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--base-size-12);
+  align-items: center;
+  padding-bottom: var(--base-size-16);
+  margin-bottom: var(--base-size-24);
+  border-bottom: var(--borderWidth-thin) solid var(--borderColor-default);
+}
+
+.spike-nav-link {
+  color: var(--fgColor-accent);
+  text-decoration: none;
+  font-weight: var(--base-text-weight-medium);
+}
+
+.spike-nav-link:hover {
+  text-decoration: underline;
+}
+
+.spike-list {
+  display: grid;
+  gap: var(--base-size-12);
+  padding: 0;
+  list-style: none;
+}
+
+.spike-card {
+  padding: var(--base-size-16);
+  border: var(--borderWidth-thin) solid var(--borderColor-default);
+  border-radius: var(--borderRadius-medium);
+  background-color: var(--bgColor-muted);
+}
+
+.spike-meta {
+  font-size: var(--text-body-size-small);
+  color: var(--fgColor-muted);
+  font-family: var(--fontStack-monospace);
+  overflow-wrap: anywhere;
+}
